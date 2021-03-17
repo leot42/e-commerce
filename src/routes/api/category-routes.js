@@ -10,7 +10,6 @@ router.get('/', (req, res) => {
     include: [{model: Product,
       as: 'products'}]
   }).then(dbCategoryData => res.json(dbCategoryData));
-  // res.json();'
 });
 
 router.get('/:id', (req, res) => {
@@ -20,8 +19,6 @@ router.get('/:id', (req, res) => {
     where: { id: req.params.id},
     include: [{model: Product,
     as: 'products'}]}).then(dbCategoryData => res.json(dbCategoryData));
-
-  //Category.findAll().then(dbCategoryData => res.json(dbCategoryData));
 });
 
 router.post('/', (req, res) => {
